@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adarshshukla.com/"/>
-  <updated>2020-03-16T00:23:16.000Z</updated>
+  <updated>2020-04-04T03:31:54.912Z</updated>
   <id>http://adarshshukla.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Apache NIFI</title>
+    <link href="http://adarshshukla.com/posts/Apache-NIFI/"/>
+    <id>http://adarshshukla.com/posts/Apache-NIFI/</id>
+    <published>2020-04-04T03:31:11.000Z</published>
+    <updated>2020-04-04T03:31:54.912Z</updated>
+    
+    <content type="html"><![CDATA[<p>This is TEST page </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;This is TEST page &lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
