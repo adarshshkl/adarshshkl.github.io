@@ -16,7 +16,7 @@
 
 
 
-<title>Impotance of partitions in kafka broker | Adarsh Shukla</title>
+<title>categories | Adarsh Shukla</title>
 
 
 
@@ -114,95 +114,13 @@
 </script>
         <div class="main">
             <div class="container">
-    
-    
-
-    
-    <article class="post-wrap">
-        <header class="post-header">
-            <h1 class="post-title">Impotance of partitions in kafka broker</h1>
-            
-                <div class="post-meta">
-                    
-                        Author: <a itemprop="author" rel="author" href="/">Adarsh Shukla</a>
-                    
-
-                    
-                        <span class="post-time">
-                        Date: <a href="#">April 4, 2020&nbsp;&nbsp;22:02:35</a>
-                        </span>
-                    
-                    
-                </div>
-            
-        </header>
-
-        <div class="post-content">
-            <p><strong>Kafka partitions</strong> represents parallelism in kafka. So, more the partitions will provide higher throughput in the application. So, when we talk about throughput, it’s the amount of message that pass by.</p>
-<p>Use case – Kafka listener is distributed among 6 instances, but Kafka topics have only 3 partitions</p>
-<p>Problem – In the above use case all 6 instances of Kafka listener will not be utilized to give maximum throughput.</p>
-<p>Reason – 3 Kafka listeners will only utilize only 3 partitions and rest instance will be in idle state.</p>
-<p>Solution – Increase partitions size to 6.</p>
-<p>How to do it –</p>
-<p>bin/kafka-topics.sh –zookeeper zk_host:port –alter –topic my_topic_name</p>
-<p>   –partitions 6</p>
-
-        </div>
-
+    <article class="post-wrap page">
         
-            <section class="post-copyright">
-                
-                    <p class="copyright-item">
-                        <span>Author:</span>
-                        <span>Adarsh Shukla</span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>Permalink:</span>
-                        <span><a href="http://adarshshukla.com/posts/Kafka_Importance/">http://adarshshukla.com/posts/Kafka_Importance/</a></span>
-                    </p>
-                
-                
-                    <p class="copyright-item">
-                        <span>License:</span>
-                        <span>Copyright (c) 2019 <a href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC-BY-NC-4.0</a> LICENSE</span>
-                    </p>
-                
-                
-                     <p class="copyright-item">
-                         <span>Slogan:</span>
-                         <span>Do you believe in <strong>DESTINY</strong>?</span>
-                     </p>
-                
-
-            </section>
+        <h2 class="post-title">categories</h2>
         
-        <section class="post-tags">
-            <div>
-                <span>Tag(s):</span>
-                <span class="tag">
-                    
-                    
-                        <a href="/tags/Kafka/"># Kafka</a>
-                    
-                        <a href="/tags/Data-Migration/"># Data Migration</a>
-                    
-                        
-                </span>
-            </div>
-            <div>
-                <a href="javascript:window.history.back();">back</a>
-                <span>· </span>
-                <a href="/">home</a>
-            </div>
-        </section>
-        <section class="post-nav">
-            
+        <section class="post-content">
             
         </section>
-
-
     </article>
 </div>
 

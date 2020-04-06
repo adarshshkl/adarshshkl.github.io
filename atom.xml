@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://adarshshukla.com/"/>
-  <updated>2020-04-05T02:48:11.793Z</updated>
+  <updated>2020-04-06T22:07:43.488Z</updated>
   <id>http://adarshshukla.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://adarshshukla.com/posts/Kafka_Importance/"/>
     <id>http://adarshshukla.com/posts/Kafka_Importance/</id>
     <published>2020-04-05T02:02:35.000Z</published>
-    <updated>2020-04-05T02:48:11.793Z</updated>
+    <updated>2020-04-06T22:07:43.488Z</updated>
     
     <content type="html"><![CDATA[<p><strong>Kafka partitions</strong> represents parallelism in kafka. So, more the partitions will provide higher throughput in the application. So, when we talk about throughput, it’s the amount of message that pass by.</p><p>Use case – Kafka listener is distributed among 6 instances, but Kafka topics have only 3 partitions</p><p>Problem – In the above use case all 6 instances of Kafka listener will not be utilized to give maximum throughput.</p><p>Reason – 3 Kafka listeners will only utilize only 3 partitions and rest instance will be in idle state.</p><p>Solution – Increase partitions size to 6.</p><p>How to do it –</p><p>bin/kafka-topics.sh –zookeeper zk_host:port –alter –topic my_topic_name</p><p>   –partitions 6</p>]]></content>
     
@@ -35,6 +35,10 @@
     </summary>
     
     
+    
+      <category term="Kafka" scheme="http://adarshshukla.com/tags/Kafka/"/>
+    
+      <category term="Data Migration" scheme="http://adarshshukla.com/tags/Data-Migration/"/>
     
   </entry>
   
