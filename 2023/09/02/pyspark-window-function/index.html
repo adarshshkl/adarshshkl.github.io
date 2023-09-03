@@ -13,7 +13,7 @@
 
 
 
-<title>Hello World | adarshshukla</title>
+<title>pyspark window function | adarshshukla</title>
 
 
 
@@ -188,7 +188,7 @@
     
     <article class="post-wrap">
         <header class="post-header">
-            <h1 class="post-title">Hello World</h1>
+            <h1 class="post-title">pyspark window function</h1>
             
                 <div class="post-meta">
                     
@@ -197,7 +197,7 @@
 
                     
                         <span class="post-time">
-                        Date: <a href="#">September 1, 2023&nbsp;&nbsp;22:47:22</a>
+                        Date: <a href="#">September 2, 2023&nbsp;&nbsp;22:16:08</a>
                         </span>
                     
                     
@@ -206,19 +206,42 @@
         </header>
 
         <div class="post-content">
-            <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+            <h1 id="PySpark-Window-Functions"><a href="#PySpark-Window-Functions" class="headerlink" title="PySpark Window Functions"></a>PySpark Window Functions</h1><p>Window functions in PySpark are a powerful tool for performing calculations across a set of rows related to the current row within a DataFrame. These functions allow you to create advanced analytics and aggregations that involve ordering, ranking, and statistical computations in a flexible manner.</p>
+<p>Window functions operate on a “window” of rows that are defined by an ordered range of data. The window specification determines which rows are included in the window for each row in the DataFrame. This specification typically consists of:</p>
+<ul>
+<li><p><strong>Partition By</strong>: This clause divides the rows into partitions or groups based on one or more columns. The window function operates independently within each partition.</p>
+</li>
+<li><p><strong>Order By</strong>: This clause defines the order in which rows are processed within each partition. It establishes the logical order of rows in the window.</p>
+</li>
+</ul>
+<p>Commonly used PySpark window functions include:</p>
+<ul>
+<li><p><strong>Ranking Functions</strong>: These functions assign a rank to each row within a partition based on the specified order. Common ranking functions include <code>rank()</code>, <code>dense_rank()</code>, and <code>ntile()</code>.</p>
+</li>
+<li><p><strong>Aggregate Functions</strong>: You can calculate aggregate values, such as sums, averages, and maximum&#x2F;minimum values, over a window of rows. Functions like <code>sum()</code>, <code>avg()</code>, <code>max()</code>, and <code>min()</code> can be used.</p>
+</li>
+<li><p><strong>Lead and Lag Functions</strong>: These functions allow you to access values from the “next” or “previous” rows within the window. They are useful for creating time-series calculations.</p>
+</li>
+<li><p><strong>Window Spec</strong>: This function is used to define the window specification within the <code>over()</code> clause, specifying the partitioning and ordering criteria.</p>
+</li>
+</ul>
+<p>Here’s an example of using a PySpark window function to calculate the average salary within each department, taking advantage of the <code>partition by</code> clause:</p>
+<pre><code class="python">from pyspark.sql import SparkSession
+from pyspark.sql.window import Window
+from pyspark.sql.functions import col, avg
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+# Initialize Spark session
+spark = SparkSession.builder.appName(&quot;WindowFunctionExample&quot;).getOrCreate()
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+# Create a DataFrame with employee data
+df = spark.createDataFrame([...])
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+# Define a window specification partitioned by department
+window_spec = Window.partitionBy(&quot;department&quot;)
 
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+# Calculate the average salary within each department
+df.withColumn(&quot;avg_salary&quot;, avg(col(&quot;salary&quot;)).over(window_spec)).show()
+</code></pre>
 
         </div>
 
@@ -233,7 +256,7 @@
                 
                     <p class="copyright-item">
                         <span>Permalink:</span>
-                        <span><a href="http://www.adarshshukla.com/2023/09/01/hello-world/">http://www.adarshshukla.com/2023/09/01/hello-world/</a></span>
+                        <span><a href="http://www.adarshshukla.com/2023/09/02/pyspark-window-function/">http://www.adarshshukla.com/2023/09/02/pyspark-window-function/</a></span>
                     </p>
                 
                 
@@ -256,6 +279,10 @@
                 <span>Tag(s):</span>
                 <span class="tag">
                     
+                    
+                        <a href="/tags/pyspark/"># pyspark</a>
+                    
+                        
                 </span>
             </div>
             <div>
@@ -266,8 +293,8 @@
         </section>
         <section class="post-nav">
             
-                <a class="prev" rel="prev" href="/2023/09/02/Rails-Active-Record/">Rails Active Record</a>
             
+            <a class="next" rel="next" href="/2023/09/02/Rails-Active-Record/">Rails Active Record</a>
             
         </section>
 
